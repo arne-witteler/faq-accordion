@@ -8,6 +8,10 @@
 }
 
 body {
+  min-height: 100vh;                
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--color-purple-100);
 }
 
@@ -29,10 +33,12 @@ body {
 }
 
 .accordion__card {
+  max-width: 768px;
   margin: 8rem 24px 0;
   padding: 2rem;
   background-color: var(--color-white);
   border-radius: 8px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
 }
 
 .accordion__header {
@@ -79,6 +85,10 @@ body {
   font-size: 16px;
   color: var(--color-purple-950);
   font-weight: var(--font-weight-semibold);
+
+  &:hover {
+    color: var(--color-violet-600);
+  }
 }
 
 .accordion__answer {
@@ -112,6 +122,10 @@ body {
 }
 
 .attribution {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 11px;
   text-align: center;
   margin: 1rem 0;
@@ -119,4 +133,40 @@ body {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+  .background-mobile {
+    top: -200px;
+  }
+
+  .accordion__card {
+    max-width: 768px;
+    margin: 0rem 3rem;
+  }
+
+  .accordion__title {
+    font-size: 56px;
+  }
+
+  .accordion__icon--star {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .background-mobile {
+    display: none;
+  }
+
+  .background-desktop {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
 }
