@@ -82,11 +82,33 @@ body {
 }
 
 .accordion__answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
   font-size: 14px;
   color: var(--color-purple-600);
   font-weight: var(--font-weight-regular);
   line-height: 1.5;
-  display: none;
+}
+
+.accordion__item.is-active .accordion__answer {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.accordion__icon--plus {
+  content: url("../assets/images/icon-plus.svg");
+  transition: transform 0.3s ease;
+}
+
+.accordion__item.is-active .accordion__icon--plus {
+  content: url("../assets/images/icon-minus.svg");
+}
+
+.accordion__item.is-active .accordion__icon--plus {
+  transform: rotate(180deg);
 }
 
 .attribution {
